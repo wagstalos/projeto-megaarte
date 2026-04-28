@@ -1,0 +1,247 @@
+.s-service {
+    @include paddingSection(90px);
+
+    .swiper-service {
+        margin-top: 40px;
+        padding-bottom: 40px; // Space for pagination
+
+        .swiper-pagination-bullet {
+            background-color: $brand-main;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: $white;
+
+            &::after {
+                font-size: 14px; // Adjust arrow size
+                font-weight: bold;
+            }
+        }
+
+        .swiper-slide {
+            text-align: left;
+            transition:
+                all 0.5s ease,
+                background-size 0.5s ease;
+
+            img {
+                border-radius: 10px;
+                width: 100%; // Ensure image fills the slide
+                height: 300px; // Standardize height
+                object-fit: cover;
+            }
+
+            &:hover {
+                transform: scale(1.02);
+            }
+
+            h4 {
+                color: $brand-main;
+                margin-bottom: $gutter;
+                margin-top: $gutter; // Reduced top margin from 4x to 1x for better balance
+            }
+
+
+            p {
+                margin-top: $gutter;
+                color: $gray-300;
+                font-size: 16px;
+                margin-bottom: $gutter*2;
+            }
+        }
+    }
+
+    @include responsive($tablet) {
+        h3 {
+            line-height: 20px;
+            height: 40px;
+        }
+
+        .swiper-service {
+            .swiper-slide {
+                text-align: center;
+
+                img {
+                    height: 250px;
+                }
+
+                p {
+                    margin-top: 10px;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+}
+
+.s-companys {
+    overflow: hidden;
+    background-color: #f8f8f8;
+    padding: 2rem 0;
+
+    .marquee-content {
+        display: flex;
+        // justify-content: center; // Removido para permitir o fluxo contínuo
+        align-items: center;
+        width: max-content;
+        animation: marquee 20s linear infinite;
+
+        img {
+            margin: 0 3rem; // Espaçamento entre as logos
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%); // Move metade da largura (assumindo que o conteúdo é duplicado)
+    }
+}
+
+.s-control {
+    // @include paddingSection(90px);
+    //    background-image: url("../img/50.webp");
+    //     background-size: cover;
+    //      background-position: center;
+    //      background-repeat: no-repeat;
+    margin: 100px;
+    border-radius: 20px;
+    background-color: $brand-black;
+    position: relative;
+    overflow: hidden; // Ensure cells don't spill out if rounded corners
+    cursor: url('../img/paint.svg'), auto;
+
+    svg {
+        color: $brand-main;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+        pointer-events: none; // Allow clicks/hover to pass through to grid
+    }
+
+    .d-flex {
+        .text {
+            width: 50%;
+            margin: 50px;
+            pointer-events: auto; // Content should be interactive
+
+            svg {
+                background-color: #161f29;
+                width: 45px;
+                height: 45px;
+                padding: 4px;
+                border-radius: 8px;
+            }
+        }
+
+        .img-obra {
+            // pointer-events: auto; // Image should be interactive/blocking?
+            width: 58%;
+            position: absolute;
+            right: -145px;
+            top: -9%;
+
+            img {
+                animation: float 6s ease-in-out infinite;
+            }
+        }
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    h2 {
+        color: $white;
+        max-width: 85%;
+        font-weight: 400;
+        margin-top: 10px;
+        margin-bottom: 40px;
+
+        b {
+            color: $brand-main;
+        }
+    }
+
+    .btn-secondary {
+        background-color: $brand-main;
+        color: $white;
+        // transition: all 0.3s ease-in;
+
+        &:hover {
+            background-color: $brand-main;
+        }
+    }
+
+    @include responsive(1224px) {
+        margin: 20px;
+
+        .d-flex {
+            flex-direction: column;
+
+            .img-obra {
+                top: 10%;
+            }
+        }
+    }
+
+    @include responsive($tablet) {
+        margin: 0;
+        border-radius: 0;
+        margin-bottom: 50px;
+
+        .d-flex {
+            flex-direction: column;
+
+            .text {
+                width: 100%;
+                margin: 50px 0;
+
+                svg {
+                    display: flex;
+                    margin: 0 auto;
+                }
+            }
+
+            .img-obra {
+                width: 80%;
+                position: relative;
+                top: 0;
+                left: 10%;
+            }
+        }
+
+        h2 {
+            max-width: 100%;
+            font-size: 4rem;
+            text-align: center;
+            // margin: 20px 50px 50px 50px;
+        }
+
+        .btn-secondary {
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 50px;
+            width: 80%;
+        }
+    }
+}

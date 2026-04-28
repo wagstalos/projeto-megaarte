@@ -1,0 +1,90 @@
+.s-contact {
+    @include paddingSection(90px);
+    background-color: #f5f7fa;
+
+    .d-flex {
+        max-width: 90%;
+
+        margin: 0 auto;
+        flex-wrap: wrap;
+        margin-top: 80px;
+
+        justify-content: space-between;
+
+        .item {
+            width: 31%;
+            p {
+                color: #595959;
+            }
+            &:last-child {
+                p {
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+
+    .card {
+        background-color: $white;
+        border-radius: 12px;
+        padding: $gutter * 3;
+        position: relative;
+
+        transition: all 0.3s ease-in-out;
+
+        h3 {
+            margin-top: 12px;
+        }
+
+        p {
+            font-size: 1.6rem;
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+
+        &:hover {
+            background-color: $white;
+
+            .btn-contact {
+                background-color: $gray-400;
+            }
+        }
+    }
+
+    .btn-contact {
+        background-color: $brand-main;
+        padding: 9px 10px;
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        margin-top: $gutter * 3;
+
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+
+        margin-top: 16px;
+
+        svg {
+            transition: transform 0.3s ease;
+        }
+
+        &:hover {
+            svg {
+                transform: translatex(3px);
+            }
+        }
+    }
+
+    @include responsive($tablet) {
+        .d-flex {
+            flex-direction: column;
+
+            .item {
+                width: 100%;
+                margin-bottom: $gutter * 2;
+            }
+        }
+    }
+}

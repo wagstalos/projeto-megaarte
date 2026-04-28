@@ -1,0 +1,72 @@
+h1 {
+    font-weight: 600;
+    font-size: 6.4rem;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+    line-height: 150%;
+}
+
+h4 {
+    font-size: 2rem;
+    line-height: 112%;
+}
+
+h1,
+h2 {
+    line-height: 112%;
+    letter-spacing: -1px;
+}
+
+h3,
+h4 {
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    // font-family: "Barlow", sans-serif;
+    font-family: "Inter", sans-serif;
+    color: $brand-black;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 150%;
+    color: rgb(103 100 100);
+    font-family: "Inter", sans-serif;
+}
+
+.subtitle {
+    color: $brand-main;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0 auto;
+    background-color: rgb(221 221 221 / 16%);
+    padding: $gutter $gutter*2;
+    border-radius: $border-radius*10;
+    display: table;
+    font-weight: 600;
+}
+
+.title-section {
+    font-weight: 600;
+    font-size: 3.5rem;
+    margin-top: $gutter*3;
+    color: $brand-black;
+    text-align: center;
+
+    @include responsive($mobile) {
+        font-size: 2.5rem;
+    }
+}
