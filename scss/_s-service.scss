@@ -114,7 +114,7 @@
     background-color: $brand-black;
     position: relative;
     overflow: hidden; // Ensure cells don't spill out if rounded corners
-    cursor: url('../img/paint.svg'), auto;
+    // cursor: url('../img/paint.svg'), auto;
 
     svg {
         color: $brand-main;
