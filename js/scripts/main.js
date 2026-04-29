@@ -13,17 +13,29 @@ function initThemeSwitcher() {
 document.addEventListener("DOMContentLoaded", function () {
   initThemeSwitcher();
 
+  const swiperHero = new Swiper(".swiper-hero", {
+    speed: 600,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-hero .swiper-pagination",
+      clickable: true,
+    },
+  });
 
   const swiper = new Swiper(".s-feedback .swiper", {
     speed: 400,
     spaceBetween: 100,
     pagination: {
-      el: ".swiper-pagination",
+      el: ".s-feedback .swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".s-feedback .swiper-button-next",
+      prevEl: ".s-feedback .swiper-button-prev",
     },
   });
 
@@ -32,12 +44,12 @@ document.addEventListener("DOMContentLoaded", function () {
     spaceBetween: 30,
     slidesPerView: 1,
     pagination: {
-      el: ".swiper-pagination",
+      el: ".swiper-service .swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-service .swiper-button-next",
+      prevEl: ".swiper-service .swiper-button-prev",
     },
     breakpoints: {
       768: {

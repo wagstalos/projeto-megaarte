@@ -1,149 +1,256 @@
 .s-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url("../img/escada.webp");
-    height: 100vh;
-    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)), url(../img/hero-new.webp);
+    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
     position: relative;
     overflow: hidden;
-    // cursor: url('../img/paint.svg'), auto;
-    background-position: center;
 
     .container {
-        pointer-events: none; // Allow interaction with grid behind
+        position: relative;
+        z-index: 2;
+        padding-top: 14rem;
+        padding-bottom: 6rem;
+        pointer-events: none;
+    }
+
+    .bg-grid {
+        z-index: 1;
+        pointer-events: auto;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 46% 54%;
+        gap: 2rem;
+        align-items: center;
+        min-height: calc(100vh - 16rem);
+        pointer-events: auto;
     }
 
     &__text {
-        text-align: center;
+        width: 100%;
+        min-width: 0;
+    }
+
+    &__eyebrow {
+        // text-transform: uppercase;
+        letter-spacing: 0.14em;
+        margin-bottom: 2.4rem;
+        color: $gray-100;
+    }
+
+    h1 {
+        font-size: 5rem;
+        color: $white;
+        line-height: 1.02;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    &__description {
+        color: $gray-100;
+        margin: 2.4rem 0 3rem;
+        font-size: 2.2rem;
+        line-height: 1.32;
+
+        b {
+            color: $brand-main;
+            font-weight: 700;
+        }
+    }
+
+    &__cta {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.4rem;
+        padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+        min-width: 27.3rem;
+
+        svg {
+            background-color: $white;
+            width: 4.2rem;
+            height: 4.2rem;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            margin-left: 0;
+        }
+    }
+
+    &__media {
+        width: 100%;
+        position: relative;
+        padding-top: 6rem;
+        min-width: 0;
+    }
+
+    &__square {
         position: absolute;
-        width: 70%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        pointer-events: auto; // Restore interactivity
+        width: 3.4rem;
+        height: 3.4rem;
+        background: $brand-main;
+        opacity: 0.8;
+        z-index: 1;
+    }
 
-        h1 {
-            font-size: 56px;
-            color: $white;
+    &__square--one {
+        top: 0;
+        left: 1rem;
+    }
 
-        }
+    &__square--two {
+        top: 2.8rem;
+        left: 7.8rem;
+    }
 
-        p {
-            color: $gray-100;
-            max-width: 70%;
-            margin: 40px auto;
-            font-size: 2.2rem;
+    &__square--three {
+        top: 6.8rem;
+        left: 1rem;
+    }
 
-            b {
-                color: $brand-main;
-                font-weight: 600;
-                height: 5px;
+    .swiper-hero {
+        border-radius: 0;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.02);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+        .swiper-slide {
+            height: 48rem;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 1;
+            }
+
+            &::before {
+                content: none;
             }
         }
+    }
 
-        .btn-primary {
-            padding: 0.5rem .5rem .5rem 2.5rem;
-            display: inline-flex;
-            width: 273px;
-            justify-content: space-between;
+    &__slider-bottom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 1.4rem;
+        z-index: 3;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 2.4rem;
+
+        .swiper-pagination {
+            position: static;
+            display: flex;
             align-items: center;
+            gap: 0.8rem;
+        }
 
-            svg {
-                background-color: $white;
-                width: 42px;
-                padding: 8px;
-                border-radius: 10px;
-                margin-left: 16px;
-            }
+        .swiper-pagination-bullet {
+            background: $white;
+            opacity: 0.45;
+            width: 2.8rem;
+            height: 0.3rem;
+            border-radius: 10rem;
+            margin: 0 !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: $brand-main;
         }
     }
 
-    @include responsive(1350px) {
-        &__text {
-            h1 {
-                font-size: 46px;
-                color: $white;
-            }
+    @include responsive(1366px) {
+        h1 {
+            font-size: 5.2rem;
         }
     }
 
-    @include responsive(1250px) {
-        &__text {
-            width: 80%;
+    @include responsive(1024px) {
+        &__content {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            min-height: initial;
         }
-    }
 
-    @include responsive($tablet) {
         &__text {
-            width: 90%;
+            width: 100%;
+        }
 
-            h1 {
-                font-size: 36px;
-                color: $white;
-            }
+        &__media {
+            padding-top: 0;
+        }
+
+        &__square {
+            display: none;
+        }
+
+        .swiper-hero .swiper-slide {
+            height: 42rem;
         }
     }
 
     @include responsive($mobile) {
-        height: 100dvh;
+        min-height: auto;
 
-        &__text {
-            width: 100%;
-
-            h1 {
-                // max-width: 96%;
-                font-size: 3.4rem;
-                color: $white;
-                // margin-left: 20px;
-                padding: 5px;
-
-                text-align: center;
-            }
-
-            p {
-                color: $gray-100;
-                max-width: 90%;
-                font-size: 1.8rem;
-                text-align: center;
-                // margin-bottom: 20px;
-                // padding-right: 20px;
-            }
+        .container {
+            padding-top: 11rem;
+            padding-bottom: 4rem;
         }
 
-        .btn-primary {
-            justify-content: space-between;
-            width: 75%;
-            font-size: 1.6rem;
-            margin-top: 30px;
-            text-transform: uppercase;
-            align-items: center;
-            white-space: nowrap;
-            font-weight: 600;
-        }
-    }
-
-    @include responsive(350px) {
-        &__text {
-            h1 {
-                font-size: 3rem;
-            }
-
-            p {
-                font-size: 1.6rem;
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
+        h1 {
+            font-size: 2.2rem;
+            line-height: 1.1;
+            letter-spacing: 0;
         }
 
-        .btn-primary {
-            padding: .6rem;
-            font-size: 1.6rem;
-            margin-top: 10px;
+        &__description {
+            font-size: 1.3rem;
+            margin: 1.2rem 0 1.8rem;
+            line-height: 1.45;
+        }
+
+        &__eyebrow {
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.18em;
+        }
+
+        &__cta {
+            width: fit-content;
+            min-width: auto;
+            max-width: 100%;
             justify-content: center;
-            font-size: 1.4rem;
+            padding: 0 2rem;
+            font-size: 1.5rem;
+            line-height: 4rem;
 
             svg {
                 display: none;
             }
+        }
+
+        .swiper-hero .swiper-slide {
+            height: 26rem;
+        }
+    }
+
+    @include responsive(350px) {
+        h1 {
+            font-size: 3rem;
+        }
+
+        &__description {
+            font-size: 1.6rem;
         }
     }
 }
