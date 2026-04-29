@@ -66,17 +66,30 @@
     &__img-bottom {
         width: 29%;
 
-        height: 230px;
+        height: 350px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
         border-radius: 20px;
+        border: 1px solid #614c07;
 
-        h3 {
+        &:last-child {
+            width: 94%;
+        }
+
+        // h3 {
+        //     position: absolute;
+        //     bottom: 55px;
+        //     left: 15px;
+        // }
+
+        .description {
             position: absolute;
-            bottom: 15px;
-            left: 15px;
+            bottom: 0;
+            padding: 15px;
+            line-height: 20px;
+            font-size: 16px;
         }
     }
 
