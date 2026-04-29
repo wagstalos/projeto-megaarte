@@ -12,17 +12,41 @@ function initThemeSwitcher() {
 
 document.addEventListener("DOMContentLoaded", function () {
   initThemeSwitcher();
+  const heroSlides = document.querySelectorAll(".swiper-hero .swiper-wrapper .swiper-slide");
+  const heroCurrent = document.querySelector(".s-hero__slider-current");
+  const heroTotal = document.querySelector(".s-hero__slider-total");
+  const heroTimerFill = document.querySelector(".s-hero__slider-timer-fill");
+  const heroAutoplayDelay = 4000;
+
+  function formatSlideNumber(value) {
+    return String(value).padStart(2, "0");
+  }
+
+  function restartHeroTimer() {
+    if (!heroTimerFill) return;
+    heroTimerFill.style.animation = "none";
+    // Force reflow to restart CSS animation cleanly
+    heroTimerFill.offsetHeight;
+    heroTimerFill.style.animation = `heroTimerFill ${heroAutoplayDelay}ms linear forwards`;
+  }
 
   const swiperHero = new Swiper(".swiper-hero", {
     speed: 600,
     autoplay: {
-      delay: 4000,
+      delay: heroAutoplayDelay,
       disableOnInteraction: false
     },
     loop: true,
-    pagination: {
-      el: ".swiper-hero .swiper-pagination",
-      clickable: true,
+    on: {
+      init: function () {
+        if (heroTotal) heroTotal.textContent = formatSlideNumber(heroSlides.length);
+        if (heroCurrent) heroCurrent.textContent = formatSlideNumber(this.realIndex + 1);
+        restartHeroTimer();
+      },
+      slideChangeTransitionStart: function () {
+        if (heroCurrent) heroCurrent.textContent = formatSlideNumber(this.realIndex + 1);
+        restartHeroTimer();
+      }
     },
   });
 

@@ -10,7 +10,7 @@
     .container {
         position: relative;
         z-index: 2;
-        padding-top: 14rem;
+        padding-top: 10rem;
         padding-bottom: 6rem;
         pointer-events: none;
     }
@@ -144,28 +144,44 @@
         bottom: 1.4rem;
         z-index: 3;
         display: flex;
+        align-items: center;
         justify-content: flex-start;
+        gap: 1.2rem;
         padding-left: 2.4rem;
+    }
 
-        .swiper-pagination {
-            position: static;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
+    &__slider-count {
+        font-size: 1.1rem;
+        letter-spacing: 0.08em;
+        color: $white;
+        opacity: 0.9;
+        min-width: 4.8rem;
+        display: inline-flex;
+        gap: 0.3rem;
+    }
+
+    &__slider-timer {
+        width: 10rem;
+        height: 0.2rem;
+        background: rgba(255, 255, 255, 0.35);
+        border-radius: 10rem;
+        overflow: hidden;
+    }
+
+    &__slider-timer-fill {
+        display: block;
+        width: 0;
+        height: 100%;
+        background: $brand-main;
+    }
+
+    @keyframes heroTimerFill {
+        from {
+            width: 0;
         }
 
-        .swiper-pagination-bullet {
-            background: $white;
-            opacity: 0.45;
-            width: 2.8rem;
-            height: 0.3rem;
-            border-radius: 10rem;
-            margin: 0 !important;
-        }
-
-        .swiper-pagination-bullet-active {
-            opacity: 1;
-            background: $brand-main;
+        to {
+            width: 100%;
         }
     }
 
@@ -241,6 +257,10 @@
 
         .swiper-hero .swiper-slide {
             height: 26rem;
+        }
+
+        &__slider-timer {
+            width: 7rem;
         }
     }
 
