@@ -46,6 +46,8 @@ header {
     .container {
         max-width: 100%;
         @include flex(row, center, space-between);
+        background-color: #000000;
+        border-radius: 20px;
     }
 
     .btn-secondary {
