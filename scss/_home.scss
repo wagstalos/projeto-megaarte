@@ -1,11 +1,12 @@
 .s-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url("../img/escada.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url("../img/escada.webp");
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     overflow: hidden;
     // cursor: url('../img/paint.svg'), auto;
+    background-position: center;
 
     .container {
         pointer-events: none; // Allow interaction with grid behind
