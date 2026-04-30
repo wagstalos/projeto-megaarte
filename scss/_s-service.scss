@@ -104,14 +104,7 @@
 }
 
 .s-control {
-    // @include paddingSection(90px);
-    //    background-image: url("../img/50.webp");
-    //     background-size: cover;
-    //      background-position: center;
-    //      background-repeat: no-repeat;
     margin-top: 50px;
-    // margin: 100px;
-    // border-radius: 20px;
     background-color: $brand-black;
     position: relative;
     overflow: hidden; // Ensure cells don't spill out if rounded corners
