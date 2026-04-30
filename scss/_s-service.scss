@@ -44,7 +44,7 @@
 
 
             p {
-                margin-top: $gutter;
+                // margin-top: $gutter;
                 color: $gray-300;
                 font-size: 16px;
                 margin-bottom: $gutter*2;
@@ -53,10 +53,10 @@
     }
 
     @include responsive($tablet) {
-        h3 {
-            line-height: 20px;
-            height: 40px;
-        }
+        // h3 {
+        //     // line-height: 20px;
+        //     // height: 40px;
+        // }
 
         .swiper-service {
             .swiper-slide {
@@ -67,7 +67,7 @@
                 }
 
                 p {
-                    margin-top: 10px;
+                    // margin-top: 10px;
                     margin-bottom: 40px;
                 }
             }

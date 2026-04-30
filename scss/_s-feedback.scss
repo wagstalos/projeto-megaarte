@@ -108,7 +108,7 @@
         }
 
         &__box2 {
-            background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(5, 5, 5, 0.5)), url(../img/cliente.webp);
+            background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.82) 0%, rgba(5, 5, 5, 0.58) 35%, rgba(5, 5, 5, 0.32) 65%, rgba(5, 5, 5, 0.55) 100%), url(../img/cliente.webp);
             position: absolute;
             width: 90%;
             z-index: 1;
