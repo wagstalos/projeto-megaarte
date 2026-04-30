@@ -26,7 +26,7 @@
                 background-size 0.5s ease;
 
             img {
-                border-radius: 10px;
+                // border-radius: 10px;
                 width: 100%; // Ensure image fills the slide
                 height: 300px; // Standardize height
                 object-fit: cover;
@@ -109,8 +109,9 @@
     //     background-size: cover;
     //      background-position: center;
     //      background-repeat: no-repeat;
-    margin: 100px;
-    border-radius: 20px;
+    margin-top: 50px;
+    // margin: 100px;
+    // border-radius: 20px;
     background-color: $brand-black;
     position: relative;
     overflow: hidden; // Ensure cells don't spill out if rounded corners
